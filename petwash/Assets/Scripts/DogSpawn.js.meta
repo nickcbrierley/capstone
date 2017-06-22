@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: c48c6af20211b574db63c8d4315e1b1d
-timeCreated: 1497932327
+guid: bab889b3f6f6234489c4af3acc5b5760
+timeCreated: 1498149696
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - GermanShepard: {fileID: 1143703516057530, guid: b47a287ddd21b1e4a9a6edb20197489d,
-      type: 2}
+  - Dog: {fileID: 1143703516057530, guid: b47a287ddd21b1e4a9a6edb20197489d, type: 2}
   - SpawnPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
