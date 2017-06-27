@@ -1,5 +1,5 @@
 ﻿#pragma strict
-public var Dog:Transform;
+var Dog:Transform;
 var SpawnPoint:Transform;
 var Parent:Transform;
 
