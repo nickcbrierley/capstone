@@ -4,6 +4,8 @@ var tub:Transform;
 var washdog:Transform;
 var wallet:UnityEngine.UI.Text;
 var currentMoney:int;
+var dogSpawn:DogSpawn;
+var allDogs:Transform;
 
 function DeskClick(){
     var agent:UnityEngine.AI.NavMeshAgent = GetComponent.<UnityEngine.AI.NavMeshAgent>();
@@ -23,6 +25,7 @@ function Wash(){
         this.gameObject.transform.GetChild(0).transform.GetChild(3).GetComponent.<Renderer>().enabled = false;
         yield WaitForSeconds(4);
         this.gameObject.transform.GetChild(0).transform.GetChild(3).GetComponent.<Renderer>().enabled = true;
+        tub.GetComponent.<Renderer>().material.SetColor("_Color", Color.grey);
         Destroy(wash.gameObject);
         ReturnToDesk();
     }
@@ -40,7 +43,7 @@ function collectCash() {
         currentMoney += 22;
         agent.destination = Vector3(0,0,0);
         yield WaitForSeconds(4);
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
 
