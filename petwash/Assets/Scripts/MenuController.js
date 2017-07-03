@@ -17,6 +17,7 @@ function Start() {
     equ.onClick.AddListener(equipmentMenu);
     dog.onClick.AddListener(dogsMenu);
     seting.onClick.AddListener(settingsMenu);
+    Time.timeScale = 1;
 }
 function menuOpen() {
     if(pauseMenu.gameObject.activeSelf) {
