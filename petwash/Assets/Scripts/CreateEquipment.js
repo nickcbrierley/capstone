@@ -28,12 +28,12 @@ function createGrid () {
 }
 
 function addShop() {
+    tile = true;
     var grids:GameObject[];
     grids = GameObject.FindGameObjectsWithTag("Grid");
     for(var go:GameObject in grids) {
         go.GetComponent.<Renderer>().enabled = true;
         pauseMenu.gameObject.SetActive(false);
-        tile = true;
     }
 }
 
@@ -42,17 +42,6 @@ function Update () {
     grids = GameObject.FindGameObjectsWithTag("Grid");
     var ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
     var hit:RaycastHit;
-    
-    if(Input.GetMouseButtonDown(0) && spawn == true) {
-        if (Physics.Raycast(ray, hit) && hit.transform.tag == "Floor") {
-            hit.point = hit.collider.gameObject.transform.position + Vector3(-6,12,-12);
-            Instantiate(tub, hit.point, tub.transform.rotation, Parent);
-            spawn = false;
-            for(var go:GameObject in grids){
-                go.GetComponent.<Renderer>().enabled = false;
-            }
-        Time.timeScale = 1;
-    }
 
     if(Input.GetMouseButtonDown(0) && tile == true) {
         if (Physics.Raycast(ray, hit) && hit.transform.tag == "Floor") {
@@ -69,7 +58,19 @@ function Update () {
             for(var go:GameObject in grids){
                 go.GetComponent.<Renderer>().enabled = false;
             }
-        }
     }
+}
+    
+if(Input.GetMouseButtonDown(0) && spawn == true) {
+    if (Physics.Raycast(ray, hit) && hit.transform.tag == "Floor") {
+        var test = hit.collider.gameObject.transform.position + Vector3(-6,12,-12);
+        Instantiate(tub, test, tub.transform.rotation, Parent);
+        spawn = false;
+        tub.GetComponent.MeshSoursetag;
+        for(var go:GameObject in grids){
+            go.GetComponent.<Renderer>().enabled = false;
+        }
+    Time.timeScale = 1;
+}
 }
 }
