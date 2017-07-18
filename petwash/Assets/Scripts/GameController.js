@@ -220,28 +220,37 @@ function equipmentMenuUpdate() {
 }
 
 function addAutoTub() {
-    autoTubs = true;
-    pauseMenu.gameObject.SetActive(false);
-    Time.timeScale = 1;
+    if(currentMoney >= 500) {
+        currentMoney -= 500;
+        autoTubs = true;
+        pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
 }
 
 function createGrid() {
-    buyTub = true;
-    var grids:GameObject[];
-    grids = GameObject.FindGameObjectsWithTag("Grid");
-    for(var go:GameObject in grids){
-        go.GetComponent.<Renderer>().enabled = true;
-        pauseMenu.gameObject.SetActive(false);
+    if(currentMoney >= 500) {
+        currentMoney -= 500;
+        buyTub = true;
+        var grids:GameObject[];
+        grids = GameObject.FindGameObjectsWithTag("Grid");
+        for(var go:GameObject in grids){
+            go.GetComponent.<Renderer>().enabled = true;
+            pauseMenu.gameObject.SetActive(false);
+        }
     }
 }
 
 function addToFloor() {
-    buyTile = true;
-    var grids:GameObject[];
-    grids = GameObject.FindGameObjectsWithTag("Grid");
-    for(var go:GameObject in grids) {
-        go.GetComponent.<Renderer>().enabled = true;
-        pauseMenu.gameObject.SetActive(false);
+    if(currentMoney >= 1000) {
+        currentMoney -= 1000;
+        buyTile = true;
+        var grids:GameObject[];
+        grids = GameObject.FindGameObjectsWithTag("Grid");
+        for(var go:GameObject in grids) {
+            go.GetComponent.<Renderer>().enabled = true;
+            pauseMenu.gameObject.SetActive(false);
+        }
     }
 }
 
